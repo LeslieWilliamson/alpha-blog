@@ -32,7 +32,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-
   def update
     # need exception handling for RecordNotFound
     @article = Article.find(params[:id])
@@ -42,5 +41,11 @@ class ArticlesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
   end
 end
