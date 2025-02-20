@@ -1,0 +1,90 @@
+<!-- For testing bootstrap without compiling assets -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <title>Bootstrap Test Document</title>
+</head>
+
+<style>
+    .navbar {
+        background-color: black !important;
+    }
+
+    .nav-link {
+        color: white !important;
+    }
+
+    #logo {
+        float: left;
+        font-size: 1.7em;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        font-weight: bold;
+    }
+
+    #home-container {
+        margin-top: 25px;
+    }
+
+    .jumbotron {
+        font-weight: bold;
+        // background-image: url('https://images.unsplash.com/photo-1592819695396-064b9572a660?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-image: url('https://images.unsplash.com/photo-1505682634904-d7c8d95cdc50?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        // background-image: url(jumbo-copy.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 500px;
+        border-color: black;
+        border-width: 2px;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    #page-content {
+        flex: 1 0 auto;
+        background-color: lightgrey;
+    }
+
+    #sticky-footer {
+        flex-shrink: none;
+    }
+</style>
+
+<body>
+    <div id="home-container" class="container ">
+        <div id="page-content" class="jumbotron text-center text-white">
+            <p>
+            <h1 class="d-flex justify-content-center align-items-center" style="height: 100px;">Alpha Blog</h1>
+            </p>
+            <p class="lead d-flex justify-content-center align-items-center" style="height: 200px;">
+                Creating a new Rails project on a newly set up WSL involves several steps, including installing
+                necessary dependencies, setting up Ruby, and creating the Rails project.
+            </p>
+            <hr class="my-4">
+            <div class="d-inline-flex gap-2 mb-5">
+                <button class="align-items-center btn btn-success btn-lg px-4" type="button">
+                    Sign up!
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

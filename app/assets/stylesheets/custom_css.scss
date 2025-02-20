@@ -1,10 +1,49 @@
 @import 'bootstrap/dist/css/bootstrap';
 
 .navbar {
-    background-color: #9b6e21 !important;
+    background-color: black !important;
 }
 
-ul.x {
-    color: green;
-    list-style-type: square;
+.nav-link {
+    color: white !important;
+}
+
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+#home-container {
+    margin-top: 25px;
+}
+
+.jumbotron {
+    font-weight: bold;
+    // background-image: url('https://images.unsplash.com/photo-1592819695396-064b9572a660?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: url('https://images.unsplash.com/photo-1505682634904-d7c8d95cdc50?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    // background-image: url(jumbo-copy.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    border-color: black;
+    border-width: 2px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#page-content {
+    flex: 1 0 auto;
+    background-color: lightgrey;
+}
+
+#sticky-footer {
+    flex-shrink: none;
 }
