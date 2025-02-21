@@ -1,7 +1,7 @@
 {
   "name": "alpha-blog",
   "private": true,
-   "devDependencies": {
+  "devDependencies": {
     "esbuild": "^0.25.0"
   },
   "scripts": {
@@ -19,7 +19,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "nodemon": "^3.1.9",
-    "postcss": "^8.5.2",
+    "postcss": "^8.5.3",
     "postcss-cli": "^11.0.0",
     "sass": "^1.85.0"
   },
