@@ -1,5 +1,9 @@
-<h1>This is the About page.</h1>
-
-<p>
-    <%= link_to 'Articles Listing', articles_path %> | <%= link_to 'Home Page', root_path %>
-</p>
+<div id="home-container" class="container text-center">
+    <div class="card-body">
+        <h3 class="card-title">About</h3>
+        <p class="card-text mt-3">This is the about page</p>
+        
+        <%= link_to 'Close', articles_path, class: "btn btn-info btn-lg align-items-center" %>
+    </div>
+           
+</div>
