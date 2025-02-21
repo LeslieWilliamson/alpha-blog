@@ -87,3 +87,22 @@ To create a custom css file, add a file with an .sccs extension to the app/asset
     @import 'custom_css';
 
 
+## Assets not updated in dev mode
+
+At some point I ran rails assets:precompile which meant I has to recompile the assets everytime I made a change as precompiled assets are served over the dynamically created assets. 
+I figured out how to undo this.
+
+```1. rails assets:clobber```
+
+This triggers the following error:
+
+```The asset “application.js” is not present in the asset pipeline```
+
+To fix this, I followed the installation instructions for [cssbundling-rails](https://github.com/rails/cssbundling-rails)
+
+```
+2. yarn build
+3. bundle add cssbundling-rails
+4. rails css:install:bootstrap
+5. bin/dev
+```
