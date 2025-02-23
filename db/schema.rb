@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_23_150817) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_23_224954) do
 # Could not dump table "articles" because of following StandardError
 #   Unknown type 'nt' for column 'user_id'
 
@@ -20,5 +20,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_23_150817) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 end
