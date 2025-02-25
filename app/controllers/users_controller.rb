@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "Your account information was successfully updated"
-      redirect_to user_path
+      redirect_to @user
     else
       render :edit, status: :unprocessable_entity
     end
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path
+    redirect_to @user
   end
 
   private
