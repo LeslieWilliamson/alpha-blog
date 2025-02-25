@@ -70,3 +70,5 @@ group :production do
   # need to install postgres before using the pg gem
   # gem "pg"
 end
+
+gem "will_paginate", "~> 4.0"
