@@ -41,10 +41,10 @@
     </tbody>
     </table>
     <div class="flickr_pagination">
+        <%= will_paginate @users, :container => false %>
         <div class="mb-2  mt-2">
             <%= page_entries_info @users %>
         </div>
-        <%= will_paginate @users, :container => false %>
     </div>
 </div>
 
