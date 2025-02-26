@@ -9,8 +9,9 @@ class UsersController < ApplicationController
     # binding.break
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Welcome to the Alpha Blog, #{@user.username}"
-      redirect_to users_path
+      session[:user_id] = @user.id
+      flash[:notice] = "Welcome to the Alpha Blog, #{@user.username}. You have successfully signed up."
+      redirect_to user_path(@user)
     else
       render :new, status: :unprocessable_entity
     end
