@@ -34,18 +34,22 @@
 
 <h2 class="text-center mt-3">Articles</h2>
 
-<div class="flickr_pagination">
-    <div class="mb-2  mt-2">
-        <%= page_entries_info @articles %>
+<% if @articles.count > 0 %>
+    <div class="flickr_pagination">
+        <div class="mb-2  mt-2">
+            <%= page_entries_info @articles %>
+        </div>
+        <%= will_paginate @articles, :container => false %>
     </div>
-    <%= will_paginate @articles, :container => false %>
-</div>
+<% end %>
 
 <%= render 'articles/article' %>
 
-<div class="flickr_pagination">
-    <%= will_paginate @articles, :container => false %>
-    <div class="mb-2  mt-2">
-        <%= page_entries_info @articles %>
+<% if @articles.count > 0 %>
+    <div class="flickr_pagination">
+        <%= will_paginate @articles, :container => false %>
+        <div class="mb-2  mt-2">
+            <%= page_entries_info @articles %>
+        </div>
     </div>
-</div>
+<% end %>
