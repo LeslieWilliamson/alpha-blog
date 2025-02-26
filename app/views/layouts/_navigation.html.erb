@@ -15,7 +15,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <%= link_to "Create blogger", signup_path, class: "dropdown-item" %>
-                        <%= link_to "List bloggers", users_path, class: "dropdown-item" %>
+                        <%= link_to "View bloggers", users_path, class: "dropdown-item" %>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -25,8 +25,14 @@
                     </a>
                     <ul class="dropdown-menu">
                         <%= link_to "Create article", new_article_path, class: "dropdown-item" %>
-                        <%= link_to "List articles", articles_path, class: "dropdown-item" %>
+                        <%= link_to "View articles", articles_path, class: "dropdown-item" %>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Log in", login_path, class: "nav-link"%>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Log out", logout_path, class: "nav-link", data: { turbo_method: :delete } %>
                 </li>
                 <li class="nav-item">
                     <%= link_to "About", about_path, class: "nav-link"%>
