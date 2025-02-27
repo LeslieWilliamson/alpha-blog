@@ -17,10 +17,13 @@
                 </div>
                 <div class="card-body">
                     <div class="card-text text-left"><%= simple_format(@article.description) =%></div>
+
+                    <% if logged_in? && current_user == @user %>
                     <div class="text-center">
                         <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-info" %>
                         <%= link_to 'Delete', article_path(@article), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure" } %>
                     </div>
+                    <% end %>
                 </div>
                 <div class="card-footer text-muted text-center ">
                     <small> Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago
