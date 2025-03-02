@@ -31,8 +31,10 @@
                     <td class="text-left"><%= time_ago_in_words(user.created_at)  =%></td>
                     <td>
                         <%= link_to 'View', user, class: "btn btn-outline-success" %>
-                        <% if logged_in? && current_user == user %>
+                        <% if logged_in? && (current_user == user  || current_user.admin?)%>
                             <%= link_to 'Update',  edit_user_path(user), class: "btn btn-outline-info" %>
+                        <% end %>
+                        <% if logged_in? && current_user.admin? %>
                             <%= link_to 'Delete', user, class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure" } %>
                         <% end %>
                     </td>
