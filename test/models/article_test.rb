@@ -2,13 +2,12 @@ require "test_helper"
 
 class ArticleTest < ActiveSupport::TestCase
   test "Article is valid" do
-    # user = User.new(username: "Leslie", email: "leslie@example.com", password: "123qwe")
-    # user.save
-    # assert user.valid?
+    user = User.create(username: "Leslie", email: "leslie@example.com", password: "password")
+    assert user.valid?
 
-    # article = Article.new(title: "Some title", description: "Some article description")
-    # article.user = user.id
-    # assert article.valid?
+    article = Article.new(title: "Some title", description: "Some article description")
+    article.user_id = user.id
+    assert article.valid?
   end
 
   test "Article title is required" do
