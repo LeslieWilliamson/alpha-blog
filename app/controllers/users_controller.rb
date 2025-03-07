@@ -40,10 +40,17 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    self_destruct = (@user == current_user)
+
     @user.destroy
-    session[:user_id] = nil if @user == current_user
     flash[:notice] = "Account and all associated articles deleted"
-    redirect_to login_path
+
+    if self_destruct
+      session[:user_id] = nil
+      redirect_to signup_url
+    else
+      redirect_to users_path
+    end
   end
 
   private
@@ -52,7 +59,10 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    begin
+        @user = User.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+    end
   end
 
   def require_same_user
