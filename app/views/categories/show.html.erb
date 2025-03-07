@@ -1,1 +1,31 @@
 <h1 class="text-center mt-4"><%= @category.name %></h1>
+
+<div class="text-center">
+    <% if logged_in? && current_user.admin? %>
+        <%= link_to 'Edit', edit_category_path(@category), class: "btn btn-info" %>
+        <%= link_to 'Delete', category_path(@category), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure" } %>
+    <% end %>
+</div>
+
+
+<h2 class="text-center mt-3">Articles</h2>
+
+<% if @articles.count > 0 %>
+    <div class="flickr_pagination">
+        <div class="mb-2  mt-2">
+            <%= page_entries_info @articles %>
+        </div>
+        <%= will_paginate @articles, :container => false %>
+    </div>
+<% end %>
+
+<%= render 'articles/article' %>
+
+<% if @articles.count > 0 %>
+    <div class="flickr_pagination">
+        <%= will_paginate @articles, :container => false %>
+        <div class="mb-2  mt-2">
+            <%= page_entries_info @articles %>
+        </div>
+    </div>
+<% end %>
