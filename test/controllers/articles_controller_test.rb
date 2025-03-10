@@ -9,6 +9,8 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get articles_url
     assert_response :success
+    assert_match @admin_user_article.title, response.body
+    assert_match @default_user_article.title, response.body
   end
 
   test "should get new when logged in" do
