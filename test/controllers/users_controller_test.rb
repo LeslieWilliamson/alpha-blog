@@ -2,8 +2,8 @@ require "test_helper"
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = User.create(username: "Leslie", email: "leslie@example.com", password: "password")
-    @admin_user = User.create(username: "admin", email: "admin@example.com", password: "password", admin: true)
+    @admin_user = User.find_by(username: "admin user")
+    @user = User.find_by(username: "default user")
   end
 
   test "should get index" do
