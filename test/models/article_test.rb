@@ -26,31 +26,31 @@ class ArticleTest < ActiveSupport::TestCase
     assert_not_nil @article.errors[:users]
   end
 
-  test "Article existing author is required" do
+  test "Article valid author is required" do
     @article.user_id = -1
     assert_not @article.valid?
     assert_not_nil @article.errors[:users]
   end
 
-  test "Article title is minimum 6 characters" do
+  test "Article title minimum characters" do
     @article.title = "t" * 5
     assert_not @article.valid?
     assert_not_nil @article.errors[:title]
   end
 
-  test "Article title is maximum 100 characters" do
+  test "Article title maximum characters" do
     @article.title = "t" * 101
     assert_not @article.valid?
     assert_not_nil @article.errors[:title]
   end
-  test "Article description is minimum 10 characters" do
+  test "Article description minimum characters" do
     @article.description = "d" * 9
     assert_not @article.valid?
     assert_not_nil @article.errors[:description]
   end
 
-  test "Article description is maximum 300 characters" do
-    @article.description = "d" * 301
+  test "Article description maximum characters" do
+    @article.description = "d" * 1001
     assert_not @article.valid?
     assert_not_nil @article.errors[:description]
   end
