@@ -72,5 +72,3 @@ group :production do
 end
 
 gem "will_paginate", "~> 4.0"
-
-gem "importmap-rails", "~> 2.1"
